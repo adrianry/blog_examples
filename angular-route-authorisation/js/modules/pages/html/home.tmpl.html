@@ -1,5 +1,6 @@
 <h1>Home</h1>
 
+<h3>Variable Adi aus dem Scope: {{ adi }}</h3>
 <p>
     <a href="#/users">This link requires the user to have admin permissions</a>
 </p>
@@ -16,3 +17,8 @@
 <p>
     <a class="btn btn-primary" access="Admin">Bin Admin</a>
 </p>
+
+<pre>$location.path() = {{$location.path()}}</pre>
+<pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+<pre>$route.current.params = {{$route.current.params}}</pre>
+<pre>$routeParams = {{$routeParams}}</pre>
