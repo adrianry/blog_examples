@@ -21,11 +21,19 @@
                         // for the sake of the demo this is hard code
                         // however this would always be a call to the server.
                         email = email.toLowerCase();
-                        if (email === 'admin@test.com') {
+                        if (email === 'admin@test.com' &&
+                            password === "admin")
+                        {
                             currentUser = createUser('Admin User', ['Admin']);
-                        } else if (email === 'manager@test.com') {
+                        } else if (
+                            email === 'manager@test.com'  &&
+                            password === "manager")
+                        {
                             currentUser = createUser('Manager User', ['UserManager']);
-                        } else if (email === 'user@test.com') {
+                        } else if (
+                            email === 'user@test.com' &&
+                            password === "user"
+                        ) {
                             currentUser = createUser('Normal User', ['User']);
                         } else {
                             defer.reject('Unknown Username / Password combination');
