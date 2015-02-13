@@ -19,7 +19,8 @@
           userLoggedOut: 'auth:user:loggedOut'
         },
         controllers: {
-            login: 'loginCtrl'
+            login: 'loginCtrl',
+            logout: 'logoutCtrl'
         },
         services: {
             authentication: 'authentication',
@@ -27,7 +28,8 @@
         },
         routes: {
             login: '/login',
-            notAuthorised: '/not-authorised'
+            notAuthorised: '/not-authorised',
+            logout: '/logout'
         }
     };
 

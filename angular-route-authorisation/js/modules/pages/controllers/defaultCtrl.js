@@ -7,11 +7,12 @@
             '$location',
             '$route',
             '$routeParams',
-            function ($scope, $location, $route, $routeParams) {
-                $scope.adi = "Hallo Adi";
+            jcs.modules.auth.services.authentication,
+            function ($scope, $location, $route, $routeParams, authentication) {
                 $scope.$location = $location;
                 $scope.$route = $route;
                 $scope.$routeParams = $routeParams;
+                $scope.CurrentLoginUser = authentication.getCurrentLoginUser();
             }
     ]);
 }(angular, jcs));

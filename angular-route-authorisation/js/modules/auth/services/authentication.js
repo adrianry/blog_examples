@@ -51,7 +51,7 @@
                     // routing back to login login page is something we shouldn't
                     // do here as we are mixing responsibilities if we do.
                     currentUser = undefined;
-                    eventbus.broadcast(jcs.modules.auth.events.userLoggedOut);
+                    eventbus.broadcast(jcs.modules.auth.events.userLoggedOut,currentUser);
                 },
                 getCurrentLoginUser = function () {
                     return currentUser;
