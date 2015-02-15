@@ -1,0 +1,17 @@
+{
+  "name": "angular-route-authorisation",
+  "version": "0.0.1",
+  "description": "",
+  "author": "adrianry",
+
+  "main": "angular-route-authorisation/index.html",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "bower": "*",
+    "json-server": "*"
+  },
+  "license": "MIT"
+}

@@ -5,7 +5,8 @@
         '$q',
         '$timeout',
         'eventbus',
-        function ($q, $timeout, eventbus) {
+        '$http',
+        function ($q, $timeout, eventbus, $http) {
             var currentUser,
                 createUser = function (name, permissions) {
                     return {
@@ -14,33 +15,31 @@
                     };
                 },
                 login = function (email, password) {
+
+                    var users = [];
+                    $http.get('db.json').then(function (a) {
+                        users = a.data;
+                    });
+
                     var defer = $q.defer();
 
                     // only here to simulate a network call!!!!!
                     $timeout(function () {
-                        // for the sake of the demo this is hard code
-                        // however this would always be a call to the server.
                         email = email.toLowerCase();
-                        if (email === 'admin@test.com' &&
-                            password === "admin")
-                        {
-                            currentUser = createUser('Admin User', ['Admin']);
-                        } else if (
-                            email === 'manager@test.com'  &&
-                            password === "manager")
-                        {
-                            currentUser = createUser('Manager User', ['UserManager']);
-                        } else if (
-                            email === 'user@test.com' &&
-                            password === "user"
-                        ) {
-                            currentUser = createUser('Normal User', ['User']);
-                        } else {
-                            defer.reject('Unknown Username / Password combination');
-                            return;
+
+                        //Adrian Ryser: lesen der User aus dem Json und wenn Login ok, user mit rolle im modell erzeugen.
+                        for (var user in users.user) {
+                            if (email == users.user[user].email && password == users.user[user].password) {
+                                currentUser = createUser(users.user[user].name, users.user[user].rolle);
+                                break;
+                            } else {
+                                defer.reject('Unknown Username / Password combination');
+                                return;
+                            }
                         }
 
                         defer.resolve(currentUser);
+
                         eventbus.broadcast(jcs.modules.auth.events.userLoggedIn, currentUser);
                     }, 1000);
 
@@ -51,7 +50,7 @@
                     // routing back to login login page is something we shouldn't
                     // do here as we are mixing responsibilities if we do.
                     currentUser = undefined;
-                    eventbus.broadcast(jcs.modules.auth.events.userLoggedOut,currentUser);
+                    eventbus.broadcast(jcs.modules.auth.events.userLoggedOut, currentUser);
                 },
                 getCurrentLoginUser = function () {
                     return currentUser;

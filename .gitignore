@@ -1,9 +1,3 @@
-### Yeoman template
 node_modules/
 bower_components/
-angular-route-authorisation/bower_components/angular
-angular-route-authorisation/bower_components/angular-route
-angular-route-authorisation/bower_components/font-awesome
 angular-route-authorisation/bower_components
-angular-route-authorisation/bower_components/jquery
-angular-route-authorisation/bower_components/bootstrap
