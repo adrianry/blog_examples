@@ -9,16 +9,13 @@
         '$location',
         jcs.modules.auth.services.authentication,
         function ($scope, $location, authentication) {
+            $scope.nologout = true;
+            var currentuser = authentication.getCurrentLoginUser();
+            $scope.currentuser = currentuser;
+            if(currentuser !== undefined)$scope.nologout = false;
             $scope.logout = function () {
-                $scope.isBusy = true;
-                $scope.CurrentLoginUser = authentication.getCurrentLoginUser();
-                authentication.logout().then(function () {
-                    $location.path(jcs.modules.pages.routes.home);
-                }, function () {
-                    $scope.invalidLogin = true;
-                })['finally'](function () {
-                    $scope.isBusy = false;
-                });
+                authentication.logout();
+                $location.path(jcs.modules.pages.routes.home);
             };
         }
     ]);

@@ -5,21 +5,21 @@
       "name":"Admin User",
       "email": "admin@test.com",
       "password": "admin",
-      "rolle": ["Admin", "User"]
+      "permissions": ["Admin", "User"]
     },
     {
       "id": 1,
       "name":"Normal User",
       "email": "user@test.com",
       "password": "user",
-      "rolle": ["User"]
+      "permissions": ["User"]
     },
     {
       "id": 2,
       "name":"Manager User",
       "email": "manager@test.com",
       "password": "manager",
-      "rolle": ["UserManager"]
+      "permissions": ["UserManager"]
     }
   ]
 }

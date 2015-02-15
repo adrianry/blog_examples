@@ -16,9 +16,9 @@
                 },
                 login = function (email, password) {
 
-                    var users = [];
+                    var userstore = [];
                     $http.get('db.json').then(function (a) {
-                        users = a.data;
+                        userstore = a.data;
                     });
 
                     var defer = $q.defer();
@@ -27,10 +27,10 @@
                     $timeout(function () {
                         email = email.toLowerCase();
 
-                        //Adrian Ryser: lesen der User aus dem Json und wenn Login ok, user mit rolle im modell erzeugen.
-                        for (var user in users.user) {
-                            if (email == users.user[user].email && password == users.user[user].password) {
-                                currentUser = createUser(users.user[user].name, users.user[user].rolle);
+                        //Adrian Ryser: lesen der User aus dem Json (userstore) und wenn Login ok, user mit rolle im modell erzeugen.
+                        for (var user in userstore.user) {
+                            if (email == userstore.user[user].email && password == userstore.user[user].password) {
+                                currentUser = createUser(userstore.user[user].name, userstore.user[user].permissions);
                                 break;
                             } else {
                                 defer.reject('Unknown Username / Password combination');
@@ -45,13 +45,12 @@
 
                     return defer.promise;
                 },
+
                 logout = function () {
-                    // we should only remove the current user.
-                    // routing back to login login page is something we shouldn't
-                    // do here as we are mixing responsibilities if we do.
                     currentUser = undefined;
                     eventbus.broadcast(jcs.modules.auth.events.userLoggedOut, currentUser);
                 },
+
                 getCurrentLoginUser = function () {
                     return currentUser;
                 };

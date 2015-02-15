@@ -1,2 +1,2 @@
-<h1>Logout erfolgreich. Benutzer: {{ CurrentLoginUser }}</h1>
-<button ng-click="logout()">Logout</button>
+<h1>Aktiver Benutzer: {{ currentuser }}</h1>
+<button class="btn btn-lg btn-primary btn-block" ng-click="logout()" ng-disabled="nologout">Logout</button>
