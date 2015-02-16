@@ -12,6 +12,14 @@
                     permissions: ['Admin']
                 }
             });
+            $routeProvider.when(jcs.modules.admin.routes.einstellungen, {
+                controller: jcs.modules.admin.controllers.users,
+                templateUrl: 'js/modules/admin/html/einstellungen.tmpl.html',
+                access: {
+                    loginRequired: true,
+                    permissions: ['Admin']
+                }
+            });
         }]);
 
 

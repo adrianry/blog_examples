@@ -26,5 +26,8 @@ angular.module(jcs.modules.auth.name).run([
                 }
             }
         });
+        $rootScope.$on('$routeUpdate', function () {
+            console.log("routeUpdate wurde geloggt.");
+        });
     }]);
 }(angular, jcs));

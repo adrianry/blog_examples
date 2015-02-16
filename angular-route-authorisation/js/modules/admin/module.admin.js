@@ -7,7 +7,8 @@
             users: 'userListCtrl'
         },
         routes: {
-            users: '/users'
+            users: '/users',
+            einstellungen: '/einstellungen'
         }
     };
 
