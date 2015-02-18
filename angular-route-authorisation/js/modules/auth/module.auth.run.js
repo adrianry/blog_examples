@@ -8,9 +8,10 @@ angular.module(jcs.modules.auth.name).run([
     function ($rootScope, $location, authorization) {
         var routeChangeRequiredAfterLogin = false,
             loginRedirectUrl;
-        $rootScope.$on('$routeChangeStart', function (event, next) {
+        $rootScope.$on('$routeChangeStart', function (event, next, prev) {
             var authorised;
-            if (routeChangeRequiredAfterLogin && next.originalPath !== jcs.modules.auth.routes.login) {
+            //Adrian Ryser: Fix "prev.originalPath !== jcs.modules.auth.routes.login" ansonsten wird nach nochmaligem klicken des link ohne login geroutet.
+            if (routeChangeRequiredAfterLogin && prev.originalPath !== jcs.modules.auth.routes.login && next.originalPath !== jcs.modules.auth.routes.login) {
                 routeChangeRequiredAfterLogin = false;
                 $location.path(loginRedirectUrl).replace();
             } else if (next.access !== undefined) {
