@@ -23,7 +23,7 @@
 
                     var defer = $q.defer();
 
-                    // only here to simulate a network call!!!!!
+                    // only here to simulate a network call, warte 1 sekunde
                     $timeout(function () {
                         email = email.toLowerCase();
 
@@ -33,20 +33,24 @@
                                 currentUser = createUser(userstore.user[user].name, userstore.user[user].permissions);
                                 break;
                             } else {
+                                //Reject, Login hat nicht funktioniert
                                 defer.reject('Unknown Username / Password combination');
                                 return;
                             }
                         }
 
+                        //Alles ok
+                        eventbus.broadcast(jcs.modules.auth.events.userLoggedIn, currentUser);
                         defer.resolve(currentUser);
 
-                        eventbus.broadcast(jcs.modules.auth.events.userLoggedIn, currentUser);
                     }, 1000);
 
+                    //gib das versprechen, dass noch was kommt
                     return defer.promise;
                 },
 
                 logout = function () {
+                    //Logout ist einfach gemacht ohne promise und zeitverzögerung
                     currentUser = undefined;
                     eventbus.broadcast(jcs.modules.auth.events.userLoggedOut, currentUser);
                 },

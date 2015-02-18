@@ -1,13 +1,13 @@
 {
   "name": "angular-route-authorisation",
   "version": "0.0.1",
-  "description": "",
+  "description": "only for selfstudy,a fork from /jonsamwell/blog_examples.git to play around with user auth and routing.",
   "author": "adrianry",
 
   "main": "angular-route-authorisation/index.html",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/adrianry/blog_examples.git"
   },
   "devDependencies": {
     "bower": "*",
