@@ -11,6 +11,35 @@
 </form>
 
 <h3>Logins</h3>
-<p>Admin User: admin@test.com</p>
-<p>Manager User: manager@test.com</p>
-<p>Normal User: user@test.com</p>
+<code>
+    <br>
+    "id": 0,<br>
+    "name":"Admin User",<br>
+    "email": "admin@test.com",<br>
+    "password": "admin",<br>
+    "permissions": ["Admin", "UserManager"]<br>
+    <br>
+    "id": 1,<br>
+    "name":"Normal User",<br>
+    "email": "user@test.com",<br>
+    "password": "user",<br>
+    "permissions": ["User"]<br>
+    <br>
+    "id": 2,<br>
+    "name":"Manager User",<br>
+    "email": "manager@test.com",<br>
+    "password": "manager",<br>
+    "permissions": ["UserManager"]<br>
+    <br>
+"id": 3,<br>
+"name":"Einstellungen SuperUser",<br>
+"email": "1@test.com",<br>
+"password": "1",<br>
+"permissions": ["zeigeEinstellungen","bearbeiteEinstellungen","loescheEinstellungen"]<br>
+    <br>
+"id": 4,<br>
+"name":"Einstellungen Readonly User",<br>
+"email": "2@test.com",<br>
+"password": "2",<br>
+"permissions": ["zeigeEinstellungen"]<br>
+</code>

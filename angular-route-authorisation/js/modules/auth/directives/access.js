@@ -15,11 +15,18 @@
                       },
                       determineVisibility = function (resetFirst) {
                           var result;
+                          //zurücksetzen aller elemente auf visible
                           if (resetFirst) {
                               makeVisible();
                           }
 
+                          //var accessPermissionType;
+                          //if(attrs.accessPermissionType === jcs.modules.auth.enums.permissionCheckType.combinationRequired) accessPermissionType = jcs.modules.auth.enums.permissionCheckType.combinationRequired;
+                         // if(attrs.accessPermissionType === jcs.modules.auth.enums.permissionCheckType.atLeastOne) accessPermissionType = jcs.modules.auth.enums.permissionCheckType.atLeastOne;
+                          //laden ob benutzer berechtigt ist das element zu sehen.
                           result = authorization.authorize(true, roles, attrs.accessPermissionType);
+
+                          //wenn benutzer darf, dann hat result den wert 0.
                           if (result === jcs.modules.auth.enums.authorised.authorised) {
                               makeVisible();
                           } else {

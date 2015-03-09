@@ -1,3 +1,19 @@
 <h1 class="page-header">Einstellungen</h1>
 
-<h2 class="sub-header">Zugriff für diese Seite benötigt Rolle Admin.</h2>
+<textarea rows="10" cols="50" access="zeigeEinstellungen" access-permission-type="{{permissionCheckType.atLeastOne}}">Dieses Textfeld wird angezeigt, wenn die Rolle zeigeEinstellungen vorhanden ist. Diese Rolle wird für die View benötigt,
+daher sollte diese Textbox immer sichtbar sein, wenn die View sichtbar ist.</textarea>
+<br>
+<br>
+<br>
+<button access="loescheEinstellungen" access-permission-type="{{permissionCheckType.atLeastOne}}">Knopf braucht Rolle: loescheEinstellungen</button>
+<br>
+<br>
+<br>
+<button access="bearbeiteEinstellungen" access-permission-type="{{permissionCheckType.atLeastOne}}">Knopf braucht Rolle: bearbeiteEinstellungen</button>
+<br>
+<br>
+<br>
+<p>
+    <a class="btn btn-primary" access="bearbeiteEinstellungen, loescheEinstellungen" access-permission-type="{{permissionCheckType.combinationRequired}}">Spezieller Knopf, wenn alle drei Rollen vorhanden sind, ist es scheinbar ein Admin.</a>
+</p>
+<br>

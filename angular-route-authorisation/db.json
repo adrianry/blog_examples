@@ -5,7 +5,7 @@
       "name":"Admin User",
       "email": "admin@test.com",
       "password": "admin",
-      "permissions": ["Admin", "User"]
+      "permissions": ["Admin", "UserManager"]
     },
     {
       "id": 1,
@@ -20,6 +20,20 @@
       "email": "manager@test.com",
       "password": "manager",
       "permissions": ["UserManager"]
+    },
+    {
+      "id": 3,
+      "name":"Einstellungen SuperUser",
+      "email": "1@test.com",
+      "password": "1",
+      "permissions": ["zeigeEinstellungen","bearbeiteEinstellungen","loescheEinstellungen"]
+    },
+    {
+      "id": 4,
+      "name":"Einstellungen Readonly User",
+      "email": "2@test.com",
+      "password": "2",
+      "permissions": ["zeigeEinstellungen"]
     }
   ]
 }

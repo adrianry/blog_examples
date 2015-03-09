@@ -32,11 +32,12 @@
                             if (email == userstore.user[user].email && password == userstore.user[user].password) {
                                 currentUser = createUser(userstore.user[user].name, userstore.user[user].permissions);
                                 break;
-                            } else {
-                                //Reject, Login hat nicht funktioniert
-                                defer.reject('Unknown Username / Password combination');
-                                return;
                             }
+                        }
+                        if(!currentUser) {
+                            //Reject, Login hat nicht funktioniert
+                            defer.reject('Unknown Username / Password combination');
+                            return;
                         }
 
                         //Alles ok

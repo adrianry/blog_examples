@@ -9,7 +9,8 @@
                 templateUrl: 'js/modules/admin/html/users.tmpl.html',
                 access: {
                     loginRequired: true,
-                    permissions: ['Admin']
+                    permissions: ['Admin'],
+                    permissionType: 'AtLeastOne'
                 }
             });
             $routeProvider.when(jcs.modules.admin.routes.einstellungen, {
@@ -17,7 +18,7 @@
                 templateUrl: 'js/modules/admin/html/einstellungen.tmpl.html',
                 access: {
                     loginRequired: true,
-                    permissions: ['Admin']
+                    permissions: ['zeigeEinstellungen']
                 }
             });
         }]);
