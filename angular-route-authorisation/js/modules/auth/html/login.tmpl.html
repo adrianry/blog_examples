@@ -2,6 +2,11 @@
 
 <form class="form-signin" role="form" ng-submit="login()">
     <h2 class="form-signin-heading">Bitte anmelden</h2>
+
+    <select ng-model="loginModel" ng-options="user.email for user in userstore.user">
+    </select>
+<br>
+
     <input type="email" class="form-control" placeholder="Email address" required="" autofocus="" ng-model="loginModel.email">
     <input type="password" class="form-control" placeholder="Password" required="" ng-model="loginModel.password">
     <button class="btn btn-lg btn-primary btn-block" type="submit">

@@ -2,10 +2,18 @@
     'use strict';
 
     angular.module(jcs.modules.auth.name).controller(jcs.modules.auth.controllers.login, [
+        '$rootScope',
         '$scope',
         '$location',
         jcs.modules.auth.services.authentication,
-        function ($scope, $location, authentication) {
+        jcs.modules.core.services.usermodel,
+        function ($rootScope, $scope, $location, authentication, usermodel) {
+
+
+            usermodel.getmodel().then(function(userstore){
+               $scope.userstore = userstore;
+            });
+
             $scope.loginModel = {};
             $scope.isBusy = false;
             $scope.invalidLogin = false;

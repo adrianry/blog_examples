@@ -4,7 +4,8 @@
     jcs.modules.core = {
         name: 'jcs-core',
         services: {
-            eventbus: 'eventbus'
+            eventbus: 'eventbus',
+            usermodel: 'usermodel'
         }
     };
 
