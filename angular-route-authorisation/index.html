@@ -2,11 +2,10 @@
 <html ng-app="route-authorisation">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Angular Route Authorisation Demo</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="bower_components/angular-wizard/dist/angular-wizard.css">
-    <link rel="stylesheet" href="css/app.css" />
+    <title>Beispiel Applikation Berechtigungskonzept</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
 
@@ -19,7 +18,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Angular Route Authorisation Demo</a>
+            <a class="navbar-brand" href="#">Beispiel Applikation Berechtigungskonzept</a>
         </div>
     </div>
 </div>
@@ -28,9 +27,9 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#/home">Home</a></li>
-                <li><a href="#/users">Benutzer <small>(Nur Admin)</small></a></li>
-                <li><a href="#/einstellungen">Einstellungen <small>(Nur Admin)</small></a></li>
+                <li class="active"><a href="#/home">Startseite</a></li>
+                <li><a href="#/task">Task</a></li>
+                <li><a href="#/einstellungen">Einstellungen</a></li>
                 <li><a href="#/logout">Logout</a></li>
             </ul>
         </div>
@@ -39,16 +38,19 @@
     </div>
 </div>
 
-
+<!--Framework -->
 <script type="application/javascript" src="bower_components/angular/angular.js"></script>
 <script type="application/javascript" src="bower_components/angular-route/angular-route.js"></script>
 
+<!--Top Instanz -->
 <script type="application/javascript" src="js/jcs.js"></script>
 
+<!--Core Modul -->
 <script type="application/javascript" src="js/modules/core/module.core.js"></script>
 <script type="application/javascript" src="js/modules/core/services/eventbus.js"></script>
 <script type="application/javascript" src="js/modules/core/services/usermodel.js"></script>
 
+<!--Auth Modul -->
 <script type="application/javascript" src="js/modules/auth/module.auth.js"></script>
 <script type="application/javascript" src="js/modules/auth/module.auth.routes.js"></script>
 <script type="application/javascript" src="js/modules/auth/services/authentication.js"></script>
@@ -58,16 +60,17 @@
 <script type="application/javascript" src="js/modules/auth/directives/access.js"></script>
 <script type="application/javascript" src="js/modules/auth/module.auth.run.js"></script>
 
-<script type="application/javascript" src="js/modules/admin/module.admin.js"></script>
-<script type="application/javascript" src="js/modules/admin/module.admin.routes.js"></script>
-<script type="application/javascript" src="js/modules/admin/controllers/userListCtrl.js"></script>
+<!--Task Modul -->
+<script type="application/javascript" src="js/modules/task/module.task.js"></script>
+<script type="application/javascript" src="js/modules/task/module.task.routes.js"></script>
+<script type="application/javascript" src="js/modules/task/controllers/taskListCtrl.js"></script>
 
+<!--Startseiten Modul -->
 <script type="application/javascript" src="js/modules/pages/module.pages.js"></script>
 <script type="application/javascript" src="js/modules/pages/module.pages.routes.js"></script>
 <script type="application/javascript" src="js/modules/pages/controllers/defaultCtrl.js"></script>
 
-<script type="application/javascript" src="bower_components/angular-wizard/dist/angular-wizard.js"></script>
-
+<!--Angular App -->
 <script type="application/javascript" src="js/app.js"></script>
 </body>
 </html>

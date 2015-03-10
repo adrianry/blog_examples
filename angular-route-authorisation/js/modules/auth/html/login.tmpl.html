@@ -3,7 +3,8 @@
 <form class="form-signin" role="form" ng-submit="login()">
     <h2 class="form-signin-heading">Bitte anmelden</h2>
 
-    <select ng-model="loginModel" ng-options="user.email for user in userstore.user">
+    <!-- Hier wird ein Dropdown aufgebaut. Der Inhalt ist eine Liste der Mailadressen aus dem Objekt User. Durch das binden an das model "loginModel" wird beim selektieren direkt User und Passwort gesetzt. -->
+    <select ng-model="loginModel" ng-options="user.name for user in userstore.user">
     </select>
 <br>
 

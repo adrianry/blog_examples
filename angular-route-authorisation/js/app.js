@@ -5,7 +5,7 @@
         'ngRoute',
         jcs.modules.core.name,
         jcs.modules.auth.name,
-        jcs.modules.admin.name,
+        jcs.modules.task.name,
         jcs.modules.pages.name
     ]);
 }(angular, jcs));

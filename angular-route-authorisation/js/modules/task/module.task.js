@@ -1,18 +1,18 @@
 (function (angular, jcs) {
     'use strict';
 
-    jcs.modules.admin = {
-        name: 'admin',
+    jcs.modules.task = {
+        name: 'task',
         controllers: {
-            users: 'userListCtrl'
+            task: 'taskListCtrl'
         },
         routes: {
-            users: '/users',
+            task: '/task',
             einstellungen: '/einstellungen'
         }
     };
 
-    angular.module(jcs.modules.admin.name, [
+    angular.module(jcs.modules.task.name, [
         'ngRoute'
     ]);
 
