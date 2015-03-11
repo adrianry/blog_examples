@@ -2,37 +2,23 @@
   "user": [
     {
       "id": 0,
-      "name":"Admin User",
-      "email": "admin@test.com",
-      "password": "admin",
-      "permissions": ["Admin", "UserManager"]
+      "name":"Task User",
+      "email": "task@test.com",
+      "password": "task",
+      "permissions": ["zeigeTask"]
     },
     {
       "id": 1,
-      "name":"Normal User",
-      "email": "user@test.com",
-      "password": "user",
-      "permissions": ["User"]
-    },
-    {
-      "id": 2,
-      "name":"Manager User",
-      "email": "manager@test.com",
-      "password": "manager",
-      "permissions": ["UserManager"]
-    },
-    {
-      "id": 3,
-      "name":"Einstellungen SuperUser",
-      "email": "1@test.com",
-      "password": "1",
+      "name":"SuperUser",
+      "email": "superuser@test.com",
+      "password": "superuser",
       "permissions": ["zeigeEinstellungen","bearbeiteEinstellungen","loescheEinstellungen"]
     },
     {
-      "id": 4,
-      "name":"Einstellungen Readonly User",
-      "email": "2@test.com",
-      "password": "2",
+      "id": 2,
+      "name":"Readonly User",
+      "email": "readonly@test.com",
+      "password": "readonly",
       "permissions": ["zeigeEinstellungen"]
     }
   ]

@@ -4,48 +4,22 @@
     <h2 class="form-signin-heading">Bitte anmelden</h2>
 
     <!-- Hier wird ein Dropdown aufgebaut. Der Inhalt ist eine Liste der Mailadressen aus dem Objekt User. Durch das binden an das model "loginModel" wird beim selektieren direkt User und Passwort gesetzt. -->
-    <select ng-model="loginModel" ng-options="user.name for user in userstore.user">
+    <select ng-model="loginModel" ng-options="user.name for user in userstore.user" class="form-control">
     </select>
 <br>
 
-    <input type="email" class="form-control" placeholder="Email address" required="" autofocus="" ng-model="loginModel.email">
-    <input type="password" class="form-control" placeholder="Password" required="" ng-model="loginModel.password">
+    <input type="email" class="form-control" placeholder="Email address" required="" autofocus="" ng-model="loginModel.email" readonly>
+    <input type="password" class="form-control" placeholder="Password" required="" ng-model="loginModel.password" readonly>
     <button class="btn btn-lg btn-primary btn-block" type="submit">
         <i class="fa" ng-class="{'fa-cog fa-spin': isBusy, 'fa-sign-in': !isBusy}"></i>
         <span>Sign in</span>
     </button>
 </form>
+<br>
+<br>
 
-<h3>Logins</h3>
-<code>
-    <br>
-    "id": 0,<br>
-    "name":"Admin User",<br>
-    "email": "admin@test.com",<br>
-    "password": "admin",<br>
-    "permissions": ["Admin", "UserManager"]<br>
-    <br>
-    "id": 1,<br>
-    "name":"Normal User",<br>
-    "email": "user@test.com",<br>
-    "password": "user",<br>
-    "permissions": ["User"]<br>
-    <br>
-    "id": 2,<br>
-    "name":"Manager User",<br>
-    "email": "manager@test.com",<br>
-    "password": "manager",<br>
-    "permissions": ["UserManager"]<br>
-    <br>
-"id": 3,<br>
-"name":"Einstellungen SuperUser",<br>
-"email": "1@test.com",<br>
-"password": "1",<br>
-"permissions": ["zeigeEinstellungen","bearbeiteEinstellungen","loescheEinstellungen"]<br>
-    <br>
-"id": 4,<br>
-"name":"Einstellungen Readonly User",<br>
-"email": "2@test.com",<br>
-"password": "2",<br>
-"permissions": ["zeigeEinstellungen"]<br>
-</code>
+<h3>Verfügbare User:</h3>
+<pre ng-model="loginModel" ng-repeat="user in userstore.user">
+    <b>{{user.name}} </b>
+    <small>permissions: {{user.permissions}}</small>
+</pre>

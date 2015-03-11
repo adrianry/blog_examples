@@ -5,8 +5,8 @@
         '$q',
         '$timeout',
         'eventbus',
-        '$http',
-        function ($q, $timeout, eventbus, $http) {
+        'usermodel',
+        function ($q, $timeout, eventbus, usermodel) {
             var currentUser,
                 createUser = function (name, permissions) {
                     return {
@@ -16,15 +16,18 @@
                 },
                 login = function (email, password) {
 
+                    //Lade UserModell
                     var userstore = [];
-                    $http.get('db.json').then(function (a) {
-                        userstore = a.data;
+                    usermodel.getmodel().then(function(a){
+                        userstore = a;
                     });
 
                     var defer = $q.defer();
 
                     // only here to simulate a network call, warte 1 sekunde
                     $timeout(function () {
+
+
                         email = email.toLowerCase();
 
                         //Adrian Ryser: lesen der User aus dem Json (userstore) und wenn Login ok, user mit rolle im modell erzeugen.

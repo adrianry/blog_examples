@@ -6,7 +6,10 @@
         function ($routeProvider) {
             $routeProvider.when(jcs.modules.pages.routes.home, {
                 controller: jcs.modules.pages.controllers.default,
-                templateUrl: 'js/modules/pages/html/startseite.tmpl.html'
+                templateUrl: 'js/modules/pages/html/startseite.tmpl.html',
+                access: {
+                    loginRequired: true
+                }
             });
         }]);
 }(angular, jcs));

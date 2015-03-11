@@ -9,7 +9,7 @@
                 templateUrl: 'js/modules/task/html/task.tmpl.html',
                 access: {
                     loginRequired: true,
-                    permissions: ['Admin'],
+                    permissions: ['zeigeTask','TaskAdmin'],
                     permissionType: 'AtLeastOne'
                 }
             });
