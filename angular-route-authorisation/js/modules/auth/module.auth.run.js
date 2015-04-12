@@ -5,6 +5,9 @@ angular.module(jcs.modules.auth.name).run([
     '$rootScope',
     '$location',
     jcs.modules.auth.services.authorization,
+
+    //TODO: hier könnte man den login machen, wenn per zertifikat eingeloggt wird. quasi als init für das berechtigungsmodul.
+
     function ($rootScope, $location, authorization) {
         var routeChangeRequiredAfterLogin = false,
             loginRedirectUrl;
